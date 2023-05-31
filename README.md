@@ -1,2 +1,2 @@
 # python-tools
-few self-written scripts 
+few self-written python scripts 
