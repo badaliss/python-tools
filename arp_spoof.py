@@ -20,7 +20,7 @@ def get_mac(target_ip):
     arp_request = scapy.ARP(pdst=target_ip)
     broadcast = scapy.Ether(dst='ff:ff:ff:ff:ff:ff')
     arp_request_broadcast = broadcast/arp_request
-    answered_lst = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0]    #ARP request
+    answered_lst = scapy.srp(arp_request_broadcast, timeout=1, verbose=False)[0]
 
     return answered_lst[0][1].hwsrc
 
