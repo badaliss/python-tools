@@ -5,9 +5,9 @@ from bs4 import BeautifulSoup
 
 def get_all_website_links(url):
 	urls = set()
-	domain_name = urlparse(url).netloc  # attr netloc keeps domain name
-	session = HTMLSession()  # create session for webapp to work
-	response = session.get(url)  # to get site info
+	domain_name = urlparse(url).netloc
+	session = HTMLSession()
+	response = session.get(url)
 	try:
 		response.html.render()
 	except:
@@ -34,7 +34,7 @@ def get_all_website_links(url):
 	return urls
 
 
-def crawl(url):  # crawler gets data from website
+def crawl(url):
 	print(f' [+] Crawling: {url}')
 	links = get_all_website_links(url)
 	for link in links:
